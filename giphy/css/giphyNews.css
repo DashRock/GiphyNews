@@ -1,0 +1,293 @@
+:root {
+    --bodyBG:#ffdcab;
+    --wrapIBorder:0.2vw inset #ac85ff;
+    --wrapIBoxShadow:0 0.1vw 0.1vw #ff9b85, 0.1vw 0.1vw 0.1vw #f0cf81, 0.2vw 0.2vw 0.2vw #85ffe3;
+    --wrapIBG:#edeca5;
+    --titleIColor:#5aa894;
+    --titleIFontFamily:poppins, sans-serif;
+    --titleIFontWeight:700;
+    --titleILetterSpacing:0.2vw;
+    --titleItextShadow:0 0.1vw 0.1vw #ff9b85, 0.1vw 0.1vw 0.1vw #f0cf81, 0.2vw 0.2vw 0.2vw #ff9b85;
+     --SpinnerBorderRadius: 50%;
+     --SpinnerBorder: 0.4vw red dotted;
+     --SpinnerBoxShadow:0 0.1vw 0.1vw #f0971a, 0.1vw 0.1vw 0.1vw #12a837, 0.2vw 0.2vw 0.2vw #2b18ff;
+     --SpinnerAfterFontFamily:righteous, sans-serif;
+    --SpinnerAfterFontSize:1.5vw;
+    --SpinnerAfterFontWeight:700;
+    --SpinnerAfterLineHeight:1.5vw;
+    --SpinnerAfterLetterSpacing:0.5vw;
+    --SpinnerAfterColor:#4263e8;
+    --SpinnerAfterTextShadow:0 0.1vw 0.1vw #5eff45, 0.1vw 0.1vw 0.1vw #ff4558, 0.1vw 0.1vw 0.1vw #ff9345;
+     --ErrColor:#d1eb3d;
+    --ErrFontFamily:righteous;
+    --ErrFontSize:1.1vw;
+    --ErrFontWeight:700;
+    --ErrLetterSpacing:0.1vw;
+    --ErrLineHeight:1.1vw;
+    --ErrTextShadow:0 0.1vw 0.1vw #593ce6, 0.1vw 0.1vw 0.1vw #000, 0.1vw 0.1vw 0.1vw #fff;
+    --ErrBG: #e8483d;
+    --headLFontSize:1vw;
+    --headLFontFamily:"Josefin Sans", sans-serif;
+    --headLFontWeight:600;
+    --headLLetterSpacing:0.0.5vw;
+    --headLLineHeight:1vw;
+    --headLColor:#5530eb;
+    --headLTextShadow:0 0.1vw 0.1vw #ffa530, 0.1vw 0.1vw 0.1vw #30ff78, 0.1vw 0.1vw 0.1vw #ff4530;
+     --ReturnedGiphBorder:0.2vw inset #593ce6;
+     --ReturnedGiphBoxShadow:0 0.1vw 0.1vw #eb8b2b, 0.1vw 0.1vw 0.1vw #2beb2f, 0.1vw 0.1vw 0.1vw #eb2b2b;
+       --giphsBorder:var();
+        --giphsbox-shadow:var();
+
+
+
+
+}
+
+a {text-decoration:none;}
+
+ul li {list-style-type:none;}
+
+body {
+position:relative;
+width:100w;
+height:25vw;
+max-width:100%;
+max-height:100%;
+background-color:var(--bodyBG);
+display:grid;
+grid-template-columns:repeat(2,1fr)
+grid-template-areas:
+'header header',
+'news  giphs',
+'footer footer';
+align-self:center;
+
+}
+
+.wrapper-index {
+position:relative;
+display:flex;
+flex-direction:row;
+text-align:center;
+border:var(--wrapperIndexBorder);
+box-shadow:var(--wrapperIndex);
+background:var(--wrapperIndexBG);
+min-width:50vw;
+max-width:100%;
+min-height:10vw;
+max-height:100%;
+}
+
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  min-width:100vw;
+  max-width:100%;
+  min-height:3vw;
+  max-height:5vw;
+  border:0.1vw inset blue;
+  background-color:beige;
+  z-index:1;
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+}
+
+footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  min-width:100vw;
+  max-width:100%;
+  min-height:5vw;
+  max-height:7vw;
+  border:0.1vw inset blue;
+  background-color:beige;
+  text-align:center;
+  z-index:25;
+}
+
+/* // News Feed Article Title */
+.title-index:after {
+position:relative;
+    content:"Welcome to GIPHY News!";
+    color:var(--titleIndexColor);
+    font-family:var(--titleIndexFontFamily);
+    font-weight:var(--titleIndexFontWeight);
+    letter-spacing:var(--titleIndexLetterSpacing);
+    line-height:var(--titleIndexLineHeight);
+    text-shadow:var(--titleIndexTextShadow);
+    color:#286cff;
+    text-shadow:0 0.05vw 0.05vw #000, 0.05vw 0.05vw 0.1vw #ff2ce3, 0.05vw 0.05vw 0.1vw #39ffe5;
+    z-index:1;
+
+ }
+
+.title-index {
+    position:relative;
+    grid-area:pTitle;
+    width:100%;
+    min-height:2vw;
+    max-height:100%;
+    background:transparent;
+    outline:none;
+    border:none;
+    justify-content:center;
+    margin:0 auto;
+    font-size:2.5vw;
+}
+
+/* // Spinner */
+.ajax-wait {
+    display: none;
+    position: absolute;
+    grid-area:spinner;
+    top: 100%;
+    left: 50%;
+    margin-left: -3.125vw;
+    margin-top: -3.125vw;
+    width: 6.25vw;
+    height: 6.25vw;
+    border-radius: var(--SpinnerBorderRadius);
+    border: var(--SpinnerBorder);
+    box-shadow:var(--SpinnerBoxShadow);
+    animation: spin 4s linear infinite;
+    z-index: 10;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ajax-wait:after {
+    content:"Please Wait..."
+    font-family:var(--SpinnerAfterFontFamily);
+    font-size:var(--SpinnerAfterFontSize);
+    font-weight:var(--SpinnerAfterFontWeight);
+    line-height:var(--SpinnerAfterLineHeight);
+    letter-spacing:var(--SpinnerAfterLetterSpacing);
+    color:var(--SpinnerAfterColor);
+    text-shadow:var(--SpinnerAfterTextShadow);
+}
+
+.newsAPI,
+.dwkz {
+  border:0.1vw inset #43c3ff;
+  background-color:#fff8ca;
+  border-radius:4vw;
+  min-width:10vw;
+  max-width:100%;
+  height:2.5vw;
+  transform:translate(0,50%);
+  }
+
+  .newsAPI:after {
+    content:"News API";
+    color:#286cff;
+    text-shadow:0 0.05vw 0.05vw #000, 0.05vw 0.05vw 0.1vw #ff2ce3, 0.05vw 0.05vw 0.1vw #39ffe5;
+  }
+
+  .newsAPI:hover:after {
+    content:"Powered By: News API";
+    color:#ff2ce3;
+    text-shadow:0 0.05vw 0.05vw #000, 0.05vw 0.05vw 0.1vw #286cff, 0.05vw 0.05vw 0.1vw #39ffe5;
+  }
+
+  .dwkz:after {
+      content:"dashWoorkZ IT";
+      color:#286cff;
+      text-shadow:0 0.05vw 0.05vw #000, 0.05vw 0.05vw 0.1vw #ff2ce3, 0.05vw 0.05vw 0.1vw #39ffe5;
+    }
+
+    .dwkz:hover:after {
+      content:"Linux Driven To Succeed!";
+      color:#ff2ce3;
+      text-shadow:0 0.05vw 0.05vw #000, 0.05vw 0.05vw 0.1vw #286cff, 0.05vw 0.05vw 0.1vw #39ffe5;
+    }
+
+
+/* // Error Message */
+.error {
+    display: none;
+    grid-area:pError
+    color:var(--ErrColor);
+    font-family:var(--ErrFontFamily);
+    font-weight:var(--ErrFontWeight);
+    letter-spacing:var(--ErrLetterSpacing);
+    line-height:var(--ErrLineHeight);
+    text-shadow:var(--ErrTextShadow);
+    background-color:var(--ErrBG);
+    min-height: 3em;
+    width: 100%;
+
+}
+
+// List of Available Headlines
+.headline {
+    position:relative;
+    grid-area:news;
+    padding:0;
+    margin:0;
+    min-width:15vw:
+    max-width:100%;
+    min-height:15vw
+    max-height:100%;
+    overflow:scroll;
+    justify-content:center;
+    margin:0 auto;
+    display:block;
+    align-self:center;
+    z-index:1;
+
+
+}
+
+.article {
+    position:relative;
+    font-size:var( --headLFontSize);
+    font-family:var( --headLFontWeight);
+    font-weight:var(--headLFontWeight);
+    letter-spacing:var(--headLLetterSpacing);
+    line-height:var(--headLLineHeight);
+    color:var(--headLColor);
+    text-shadow:var(--headLTextShadow);
+    min-width:10vw;
+    max-width:100%;
+
+}
+
+/* // Gifs Relating to Articles */
+.giphs {
+    transform:translate(0, 15%);
+    position:relative;
+    grid-area:giphs;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:baseline;
+    align-content:center;
+    flex-wrap:wrap;
+    max-width:85%;
+    min-height:10vw
+    max-height:85%;
+
+}
+
+img {
+    position:relative;
+
+    align-self:center;
+    min-width:4vw;
+    max-width:50%;
+    min-height:4vw;
+    max-height:50%;
+    border:var(--ReturnedGiphBorder);
+    box-shadow:var(--SpinnerBoxShadow);
+
+}
+
+
