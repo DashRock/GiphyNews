@@ -1,8 +1,8 @@
-// newsapi.org API Key: "b840690be66743a0a94e3831af0f02de"
+// newsapi.org API Key: ""
 
-// let apiKey = "b840690be66743a0a94e3831af0f02de";
+// let apiKey = "";
 
-let giphyAPIKEY = "YTz7xYutlTn4Tn4Tl9aFAcbkd6hsrl10vlD";
+let giphyAPIKEY = "";
 
 
 
@@ -38,7 +38,7 @@ function showHeadlines() {
     "&" +
     "category=entertainment" +
     "&" +
-    "apiKey=b840690be66743a0a94e3831af0f02de";
+    "apiKey=";
     
     let req = new XMLHttpRequest();
     req.open("GET", headLinesURL, true);
